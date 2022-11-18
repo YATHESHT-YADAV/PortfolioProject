@@ -13,8 +13,8 @@ Select SaleDateConverted, CONVERT(Date,SaleDate)
 From PortfolioProject.dbo.NashvilleHousing
 
 
-Update NashvilleHousing              /* this won't work*/
-SET SaleDate = CONVERT(Date,SaleDate)
+--Update NashvilleHousing              
+--SET SaleDate = CONVERT(Date,SaleDate)
 
 ALTER TABLE NashvilleHousing
 Add SaleDateConverted Date;
@@ -24,7 +24,7 @@ SET SaleDateConverted = CONVERT(Date,SaleDate)
 
  --------------------------------------------------------------------------------------------------------------------------
 
--- Populate Property Address data
+-- Populating Property Address data
 
 Select *
 From PortfolioProject.dbo.NashvilleHousing
@@ -155,7 +155,7 @@ SET SoldAsVacant = CASE When SoldAsVacant = 'Y' THEN 'Yes'
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
--- Remove Duplicates
+-- Removing Duplicates
 
 WITH RowNumCTE AS(
 Select *,
